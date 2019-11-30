@@ -11,7 +11,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        testBase();
+        //testBase();
+        testCallJM();
 
     }
 
@@ -44,6 +45,17 @@ public class MainActivity extends AppCompatActivity {
         JNIRegUtils.getString();
         JNIRegUtils.getTwoSum(2,3);
         JNIRegUtils.printlnString("Hello","JNI");
+    }
+
+    private void testCallJM(){
+
+        String sayHello = JNICallJMUtils.sayHello();
+
+        Log.i("MainActivity", sayHello);
+
+        JNICallJMUtils.callJavaStaticMethod(11);
+
+        JNICallJMUtils.callJavaMethod(11);
     }
 
 
